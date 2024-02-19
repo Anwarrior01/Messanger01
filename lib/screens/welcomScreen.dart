@@ -1,6 +1,10 @@
+import 'package:chat_app/screens/registration_screen.dart';
+import 'package:chat_app/screens/signin_screen.dart';
+import 'package:chat_app/widgets/my_button.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  static const String screenRoute = 'welcome_screen';
   const WelcomeScreen({super.key});
 
   @override
@@ -34,47 +38,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: 32,
             ),
             MyButton(
-             color: Colors.yellow[800]!,
-              title : 'Sign in!',
-              onPressed: (){},
+              color: Colors.yellow[800]!,
+              title: 'Sign in!',
+              onPressed: () {
+                Navigator.pushNamed(context, SignInScreen.screenRoute);
+              },
             ),
             SizedBox(
               height: 24,
             ),
             MyButton(
-             color: Colors.blue[900]!,
-              title : 'Register',
-              onPressed: (){},
+              color: Colors.blue[900]!,
+              title: 'Register',
+              onPressed: () {
+                Navigator.pushNamed(context, RegistrationScreen.screenRoute);
+              },
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class MyButton extends StatelessWidget {
-  MyButton({required this.color, required this.title, required this.onPressed});
-  final Color color;
-  final String title;
-  final Function onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Material(
-        elevation: 5,
-        color: color,
-        borderRadius: BorderRadius.circular(10),
-        child: MaterialButton(
-          onPressed: () => onPressed,
-          minWidth: 200,
-          height: 42,
-          child: Text(
-            title,
-            style: TextStyle(color: Colors.white,fontSize: 16),
-          ),
         ),
       ),
     );
