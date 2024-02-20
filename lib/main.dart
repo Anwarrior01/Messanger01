@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:chat_app/screens/chat_screen.dart';
 import 'package:chat_app/screens/registration_screen.dart';
 import 'package:chat_app/screens/signin_screen.dart';
@@ -25,6 +24,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _auth = FirebaseAuth.instance;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -34,7 +34,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: ChatScreen(),
-      initialRoute: WelcomeScreen.screenRoute,
+      initialRoute: _auth.currentUser != null
+          ? ChatScreen.screenRoute
+          : WelcomeScreen.screenRoute,
       routes: {
         WelcomeScreen.screenRoute: (context) => WelcomeScreen(),
         SignInScreen.screenRoute: (context) => SignInScreen(),
