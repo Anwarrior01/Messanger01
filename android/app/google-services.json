@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1090996485255",
+    "project_id": "let-s-talk-chat-app-99e92",
+    "storage_bucket": "let-s-talk-chat-app-99e92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090996485255:android:45972980df14a15f00cc22",
+        "android_client_info": {
+          "package_name": "ma.anwarrior01.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkH_Ii061lnhgJC36jrvVbiuvQfAde5cA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
